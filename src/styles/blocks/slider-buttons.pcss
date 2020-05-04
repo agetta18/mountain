@@ -1,0 +1,86 @@
+.slider-buttons__item{
+    width: 50px;
+    height: 50px;
+    background-color: #353e4e;
+    display: inlain-block;
+    position: relative;
+    border: none;
+    outline: none;
+    cursor: painter;
+
+    &:before{
+        content: '';
+        background: svg-load('arrow-down.svg', fill=white, width=100%, height=100%) center center no-repeat;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: block;
+        width: 12px;
+        height: 10px;
+        opacity:.5;
+    }
+    &:active{
+        background-color:#5500f2;
+
+    }
+
+    &--prev {
+        &:before{
+            transform: translate(-50%, -50%) rotate(270deg);
+        }
+    }
+    &--next {
+        &:before{
+            transform: translate(-50%, -50%) rotate(90deg);
+        }
+    }
+    &:hover{
+        &:before{
+            opacity: 1;
+        }
+    }
+
+    &--left{
+         &:before{
+            transform: translate(-50%, -50%) rotate(180deg);
+            background: svg-load('arrow-down.svg', fill=#1f232d, width=100%, height=100%) center center no-repeat;
+            opacity: 1;
+        }
+    }
+
+    &--right{
+         &:before{
+            transform: translate(-50%, -50%) rotate(0deg);
+            background: svg-load('arrow-down.svg', fill=#1f232d, width=100%, height=100%) center center no-repeat;
+            opacity: 1;
+        }
+    }
+
+
+}
+
+.slider__buttons{
+    position: absolute;
+    right: 12%;
+    
+}
+
+.slider-btn--reviews {
+    background-color:transparent;
+    border-radius: 50px;
+    border: 1px solid currentColor;
+
+    &:active{
+        background-color: transparent;
+
+    }
+    
+}
+
+.reviews__slider-button{
+    display: flex;
+    justify-content: space-between;
+    width: 9%;
+    margin-left: 115px;
+
+}

@@ -1,0 +1,44 @@
+.socials__link{
+    height: 24px;
+    width: 24px;
+    display: block;
+}
+
+.socials__icon{
+    height: 100%;
+    width: 100%;
+    fill: rgb(70, 77, 98);
+
+    &:hover{
+        fill: #5500f2;
+    }
+}
+
+.socials{
+    display: flex;
+}
+
+.socials__item{
+    margin-right: 40px;
+
+    &:last-child{
+        margin-right: 0;
+    }
+}
+
+.socials__icon--modific{
+    fill: currentColor;
+}
+
+.socials__item--modific{
+    padding: 15px;
+    border-radius: 50px;
+    border: 1px solid currentColor;
+
+    &:hover{
+        border: 1px solid #5500f2;
+        .socials__icon--modific{
+            fill: #5500f2;
+        }
+    }
+}

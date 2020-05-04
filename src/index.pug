@@ -10,6 +10,230 @@ html(lang="en")
   body
     .wrapper
       .maincontent
-        +image('content/user.jpg', 'user-pic')
-        +icon('link', 'link-class')
-        .icon-bg
+        .welcome-section
+            section.hero
+                .container
+                    header.header
+                        .header__logo
+                            .logo BA
+                        .header__menu
+                            nav.menu
+                                - var items = ['Главная','Обо мне','Навыки','Работы','Отзывы','Связаться'];
+                                ul.menu__list
+                                    each item in items
+                                        li.menu__item
+                                            a.menu__link #{item}
+                        .header__socials
+                            - var icons = ['insta', 'vk', 'github'];
+                            ul.socials
+                                each item in icons
+                                    li.socials__item
+                                        a(href="").socials__link
+                                            +icon(item, 'socials__icon')
+                    .hero__content
+                        .user-data
+                            .user-data__desc Личный сайт <br> веб-разработчика
+                            h1.user-data__name Кошкина <br> Анастасия
+                    a(href="#").hero__bottom-btn.scroll-down__btn Скролл
+                
+            section.about-section
+                .container
+                    .about
+                        .about__user-data
+                            .user-info
+                                .user-info__avatar
+                                    .avatar
+                                        +image('content/user.jpg', 'avatar__img')
+                                .user-info__content
+                                    -
+                                        var userdata = [
+                                            ['Проживаю', 'Санкт-Петербург'],
+                                            ['Возраст', '22 года'],
+                                            ['Родилась', '18 ноября 1997']
+                                        ];
+                                    table.user-info__data
+                                        tbody.user-info__data-body
+                                            each row in userdata
+                                                tr
+                                                    td.user-info__title #{row[0]}:
+                                                    td.user-info__text #{row[1]}
+                        .about__content
+                            .about__disclamer Привет, меня зовут
+                            h2.about__title Кошкина Анастасия
+                            .about__desc
+                                p Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+                            .about__other
+                                p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+                                .about__outside
+                           
+
+        .middle-section
+            section.values-section
+                .triangles.values-section__triangles
+                    svg(viewBox='0 0 1000 100' preserveAspectRatio='none').triangles__item.triangle
+                        polygon(points='0,0 0,100 1000,100')
+                    svg(viewBox='0 0 1000 100' preserveAspectRatio='none').triangles__item.triangle
+                        polygon(points='1000,0 1000,100 0,100') 
+                .container.container__values
+                    .values-section__content
+                        .value-section__pic
+                            +image('content/backpack.jpg', 'backpack__img')
+                        .values-section__title 
+                            .value-section__title--content
+                                .longtitle
+                                    h3.longtitle__text.section__title--long Чем я могу быть полезен вам
+                                    .longtitle__decs 
+                                        p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+                            .value-section__skill
+                                -
+                                    var skill = [
+                                        ['Front-end', ['HTML5',' CSS3', 'Javascript', 'Jquery и Vue.js']],
+                                        ['Workflow', ['GIT', 'Terminal', 'Gulp', 'Webpack']],
+                                    ];
+
+                                ul.skills-list
+                                    each row in skill
+                                        li.skills-list__item.skills-row
+                                            .skills-row__title #{row[0]}
+                                            ul.skills-row__list 
+                                                each cell in row[1]
+                                                    li.skill-row__item
+                                                        .skill
+                                                            svg(viewBox="0 0 150 150").skill__circle-shape
+                                                                circle(cx="75" cy="75" r="65").skill__circle.skill__circle-gray
+                                                                circle(cx="75" cy="75" r="65" stroke='url(#gradient)').skill__circle.skill__circle-gradient
+                                                                linearGradient(id="gradient" x1="0%" y1="0%" x2="100%" y2="0%")
+                                                                    stop(offset="0%" stop-color="#851bde")
+                                                                    stop(offset="100%" stop-color="#4d0bdf")
+                                                            .skill__circle-title= cell
+            section.work
+                .container.work__container
+                    h2.section__title Мои работы
+                    .work__colls
+                        .work__left
+                            .slider
+                                +image('content/preview.jpg', 'preview-pic')
+                                .slider__preview
+                                    - var previews = [ 'content/2.jpg', 'content/3.jpg','content/4.jpg', 'content/5.jpg'];
+                                        ul.previews
+                                            each item in previews
+                                                li.previews__item
+                                                    +image(`${item}`,'previews-pic--mini')
+                                                    
+                                        
+                                .slider__buttons
+                                    .slider__button
+                                        button.slider-buttons__item.slider-buttons__item--prev 
+                                        button.slider-buttons__item.slider-buttons__item--next
+                                            
+                        .work__right
+                            .work__tags
+                                - var tags = ['HTML', 'CSS', 'Javascript'];
+                                    ul.tags__list
+                                        each tag in tags 
+                                            li.tag__item #{tag}
+                            h2.section__title.section__title-work Сайт школы образования
+                            .work__desc-text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+                            a(href="").iconed-link
+                                .iconed-link__text Посмотреть сайт
+                .triangles.work-section__triangles
+                    svg(viewBox='0 0 1000 100' preserveAspectRatio='none').triangles__item.triangle
+                        polygon(points='0,0 0,100 1000,100')
+                    svg(viewBox='0 0 1000 100' preserveAspectRatio='none').triangles__item.triangle
+                        polygon(points='1000,0 1000,100 0,100')
+        .last-section
+            section.reviews
+                .container
+                    .block__section
+                        h2.section__title Что обо мне говорят
+                        .reviews__slider-button
+                            button.slider-buttons__item.slider-buttons__item--left.slider-btn--reviews 
+                            button.slider-buttons__item.slider-buttons__item--right.slider-btn--reviews 
+                    .reviews__slider-window
+                        .reviews__slider
+                            -
+                                var users = [
+                                    ['Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!', 'content/user1.jpg', 'Ковальчук Дмитрий', 'Основатель LoftSchool'],
+                                    ['Этот код выдержит любые испытания. Только, пожалуйста, не загружайте сайт на слишком старых браузерах ', 'content/user2.jpg', 'Владимир Сабанцев', 'Преподаватель']
+                                    
+                                ];
+                            ul.reviews__list
+                                each user in users
+                                    li.review__item
+                                        .review
+                                            .review__content  #{user[0]}
+                                            .review__user
+                                                .user-info__avatar.user-info__avatar-rev
+                                                    .avatar.avatar--review
+                                                        +image(`${user[1]}`,'avatar__rew-pic')
+                                                .user__content
+                                                    .user__name #{user[2]}
+                                                    .user__position #{user[3]}
+                                                
+
+            section.contacts
+                .container
+                    h2.section__title Связаться со мной
+                    .contacts__form
+                        form.form
+                            .form__row
+                                -
+                                    var fields = [
+                                        ['user', 'Введите Ваше имя','Ковальчук Дмитрий'],
+                                        ['envelope','Введите Ваш email','loftschool@study.com']
+                                    ];
+                                each item in fields
+                                    label.form-block(data-title=item[1])
+                                        .form-block__container
+                                            +icon(`${item[0]}`, 'form-block__icon')
+                                            .form-block__field
+                                                input(type="text" placeholder=item[2]).form-block__input
+                            .form__row.form__row-message
+                                label.form-block(data-title='Сообщение к письму')
+                                    .form-block__container.form-block__container--mes
+                                        +icon('message','form-block__icon')
+                                        .form-block__field
+                                            textarea(placeholder='Требуется Ваша помощь в создании сайта. Интересуют сроки и цена вопроса.' rows="2").form-block__input.form-block__textarea
+                            .form__row
+                                input(type='submit' value='отправить').form__btn.btn-violet
+        footer.footer
+            .container.footer__container
+                .footer__content
+                    .footer__content-col
+                        .footer__content-year &copy; 2019
+                    .footer__content-info
+                        h4.footer__username Кошкина <br> Анастасия
+                        .footer__text Личный сайт <br> веб-разработчика
+                .footer__data
+                    nav.menu.menu--white.footer__data-menu
+                        ul.menu__list
+                            each item in items
+                                li.menu__item
+                                    a.menu__link #{item}    
+                    .footer__data-content
+                        .footer__data-col.footer__data-col--first
+                            .footer__data-text
+                                p Этот сайт я сделал в рамках обучения в <br> Школе онлайн образования LoftSchool. 
+                            .footer__data-socials
+                                ul.socials.socials--modific
+                                    each item in icons
+                                        li.socials__item.socials__item--modific
+                                            a(href="").socials__link
+                                                +icon(item, 'socials__icon socials__icon--modific').socials__icon--modific
+                        .footer__data-col
+                            .footer__data-quote
+                                .quote__text
+                                    p Всегда пишите код так, будто сопровожать его будет склонный к насилию психопат, который знает, где вы живёте.
+                                .quote__text-name Martin Golding
+
+
+
+
+       
+    
+            
+
+
+
+
+        

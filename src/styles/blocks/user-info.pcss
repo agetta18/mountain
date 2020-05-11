@@ -2,23 +2,44 @@
     margin-right: 0;
     display: flex;
     justify-content: center;
-    width: 200px;
-    height: 200px;
+    width: 200PX;
+    height: 200PX;
     margin-bottom: 70px;
 
-    &-rev{
-        width: 77px;
-        height: 77px;
-        margin-bottom: 0;
+    @include phones{
+        margin-left: 10%;
+        margin-bottom: 20px;
+ 
     }
+
+    &-rev{
+        width: 77PX;
+        height: 77PX;
+        margin-bottom: 0;
+
+        @include phones{
+            margin-left: 0;
+            margin-bottom: 0;
+            width: 50PX;
+            height: 50PX;
+        }
+    }
+
+  
 }
 
 .user-info__title{
     color: rgba(70, 77, 98, 0.302);
+     @include phones{
+        width: 50%;
+    }
 }
 
 .user-info__text{
     color: rgb(70, 77, 98); 
+    @include phones{
+        width: 50%;
+    }
 }
 
 .user-info__data{
@@ -28,6 +49,10 @@
     text-align: left;
     font-size: 16px;
 
+}
+
+.user-info__content{
+    margin-bottom: 50px;
 }
 
 

@@ -1,4 +1,18 @@
 .reviews__slider-window{
     display: flex;
     width: 68%;
+
+    @include desktop{
+        width: 95%;
+    }
+
+    @include tablets{
+        width: 100%;
+        
+    }
+
+    @include phones{
+        width: 100%;
+        overflow: hidden;
+    }
 }

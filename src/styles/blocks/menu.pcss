@@ -1,5 +1,16 @@
 .menu__list{
     display: flex;
+
+    @include tablets{
+        display: none;
+    }
+
+    &--footer{
+        @include tablets{
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
 }
 
 .menu__item{
@@ -12,7 +23,7 @@
 
     &:hover{
         opacity: 1;
-        font-weight: 600;
+        text-decoration: underline;
     }
 }
 
@@ -23,3 +34,25 @@
   
 }
 
+.menu__span {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 20px;
+
+
+    & span {
+        width: 100%;
+        height: 4px;
+        background-color: $text-color;
+        display: block;     
+    }
+
+     @include tablets{
+        display: inline-flex;
+    }
+
+   
+    
+}

@@ -1,11 +1,26 @@
 .about{
     display: flex;
     justify-content: center;
-    padding: 175px 270px 250px;
+    padding: 53px 270px 250px;
+  
+
+    @include desktop{
+       padding: 50px 20px 250px 0;   
+    }
+
+    @include tablets{
+        padding: 130px 0 150px;
+    }
+
+    @include phones{
+        flex-direction: column;
+        
+    }
 }
 
 .about__user-data{
     flex: 1;
+    z-index: 10;
 }
 
 .about__content{
@@ -18,6 +33,7 @@
     line-height: 1.875;
     text-align: left;
     font-weight: 700;
+    z-index: 10;
     
 }
 
@@ -27,6 +43,10 @@
     font-weight: bold;
     line-height: 1.333;
     margin-bottom: 20px;
+
+    @include phones{
+        margin-bottom: 50px;
+    }
 
 }
 
@@ -51,12 +71,27 @@
         font-size: 48px;
         color: rgba(219, 2, 0, 0.102);
         font-style: italic;
+
+    }
+
+    @include phones{
+        left: -17%;
+        top: -14%;
     }
 
 }
 
 .about__disclamer{
     margin-bottom: 20px;
+    @include phones{
+        margin-bottom: 0;
+    }
+}
+
+.about__desc{
+     @include phones{
+        margin-bottom: 50px;
+    }
 }
 
 

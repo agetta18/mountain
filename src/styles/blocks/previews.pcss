@@ -1,21 +1,68 @@
 .previews{
-    height: 408px;
+    height: 450px;
     width: 180px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    overflow: hidden;
+    
+
+    @include desktop{
+        height: 337px;
+        
+    }
 }
 
 
 .previews__item{
-    &:hover{
-        border: 2px solid orange;
+    position: relative;
+    cursor: pointer;
+  
+     &:after {
+        content: '';
+        display: block;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-color: rgba(#5500f2, 0);
+        transition: 250ms background-color;   
     }
+
+     &:hover{
+        &:after{
+            background-color: rgba( #5500f2, 0.5);
+
+        }
+    }
+
+    &-active{
+        border: 2px solid #5500f2;
+    }
+
+  
 }
 
 .slider__preview{
     position: absolute;
-    right: 12%;
-    bottom: 8%;
+    right: 0;
+    bottom: -32px;
+    height: 88%;
+    overflow: hidden;
+
+    @include desktop{
+        bottom: 0;
+        height: 80%;
+    }
+
+    @include tablets{
+        bottom: -18px;
+
+    }
+
+    @include phones{
+        display: none;
+    }
 
 }

@@ -1,16 +1,52 @@
 .user-data{
     text-align: center;
+
+    @include desktop{
+        display: flex;
+    }
+
+    @include tablets{
+        flex-direction: column;
+    }
 }
 
 .user-data__desc{
-  font-size: 18px;
-  line-height: 1.667;
-  color: rgba(70, 77, 98, 0.4);
-  margin-bottom: 30px;
+    font-size: 18px;
+    line-height: 1.667;
+    color: rgba(70, 77, 98, 0.4);
+    margin-bottom: 30px;
+
+    @include desktop{
+        text-align: right;
+        margin-right: 60px;
+    }
+
+    @include tablets{
+        text-align: center;
+        margin-right: 0;
+    }
+
+    @include phones{
+        margin-bottom: 5px;
+    }
 }
 
 .user-data__name{
-  font-size: 72px;
-  line-height: 0.833;
-  font-weight: 800;
+    font-size: 72px;
+    line-height: 0.833;
+    font-weight: 800;
+
+    @include desktop{
+        text-align: left; 
+    }
+
+    @include tablets{
+        text-align: center;
+    }
+
+    @include phones{
+        font-size: 36px;
+        line-height: 1.333;
+ 
+    }
 }

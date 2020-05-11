@@ -9,9 +9,32 @@
     display: flex;
     margin-bottom: 40px;
 
+    @include phones{
+        flex-direction: column;
+        width: 100%;
+
+    }
+
     &-message{
         margin-bottom: 60px;
+
+        @include tablets{
+            margin-bottom: 30px;
+        }
+
     }
+
+    &-submit{
+        @include tablets{
+            padding: 0 28%;
+        }
+
+        @include phones{
+            padding: 0;
+        }
+    }
+
+    
    
 }
 
@@ -21,6 +44,17 @@
     flex: 1;
     cursor: pointer;
     position: relative;
+
+    &:last-child{
+        margin-bottom: 0;
+
+    }
+
+    @include phones{
+        width: 100%;
+       margin-bottom: 40px;
+        
+    }
    
     &:hover{
         border-bottom: 1px solid #5500f2;
@@ -58,7 +92,6 @@
     }
 
     &__input{
-        /* display: none; */
         background: transparent;
         border: none;
         color: rgb(70, 77, 98);
@@ -75,6 +108,7 @@
         &:focus{
             outline: none;
         }
+
        
     }
 }
@@ -83,3 +117,4 @@
 .form-block__textarea{
     resize: none;
 }
+

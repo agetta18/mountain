@@ -4,7 +4,6 @@
     font-weight: bold;
     line-height: 1.2;
    
-
 }
 
 .longtitle__decs  {
@@ -14,5 +13,14 @@
     text-align: left;
     width: 600px;
 
-    
+    @include tablets{
+        text-align: center;
+        width: 100%;
+        padding: 0 18%;
+    }
+     @include phones{
+        text-align: left;
+        padding: 0;
+    }
+ 
 }

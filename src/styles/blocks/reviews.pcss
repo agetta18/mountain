@@ -7,6 +7,14 @@
     font-weight: 700;
     width: 70%;
     justify-content: space-between;
+    @include tablets{
+        width: 82%;
+        
+    }
+     @include phones{
+        width: 260PX;
+    }
+
 }
 
 .review__user{
@@ -14,6 +22,20 @@
     justify-content: space-between;
     align-items: center;
     width: 88%;
+
+    @include desktop{
+        width: 80%;
+    }
+
+    @include tablets{
+        width: 90%;
+
+    }
+    @include phones{
+        width: 100%;
+      
+    }
+     
 }
 
 .user__position{
@@ -31,12 +53,17 @@
 }
 
 .reviews__list{
-    display: flex;
+    display: flex;  
 }
 
 .review__item{
     display: flex;
     flex: 1;
+
+    @include phones{
+        width: 260PX;
+        margin-right: 10%;
+    }
     
     &::before{
         content: "";
@@ -45,8 +72,23 @@
         width: 75px;
         height: 65px;
         margin-right: 10px;
+
+        @include desktop {
+            margin-right: 20px;
+        }
+
+        @include tablets{
+            width: 30px;
+            height: 40px;
+        }
+
+        @include phones{
+            display: none;
+        }
      
-    }  
+    } 
+    
+
 }
 
 .review__content{

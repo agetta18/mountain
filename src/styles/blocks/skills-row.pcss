@@ -1,9 +1,9 @@
 .skills-row__list{
     display: flex;
     flex-wrap: wrap;
-  
+    margin-bottom: 35px;
 
-  
+
 }
 
 .skills-row__title{
@@ -12,8 +12,12 @@
     font-weight: bold;
     line-height: 2;
     text-align: left;
-  
+    margin-bottom: 30px;
 
+     @include tablets{
+        text-align: center;
+    }
+    
    
 }
 
@@ -23,5 +27,14 @@
     &:last-child{
         margin-right: 0;
     } 
+
+    @include tablets{
+        margin-right: 23px;
+    }
+
+    @include phones{
+        margin-right: 8px;
+        margin-bottom: 5px;
+    }
 }
 

@@ -1,9 +1,27 @@
 .work__colls{
-    display: flex;
+    display: grid;
+    grid-template-columns: 2.7fr 1fr;
+    grid-gap: 157px;
+
+    @include desktop{
+        grid-gap: 110px;
+        grid-template-columns: 2.5fr 1fr;
+
+    }
+
+    @include tablets{
+        text-align: center;
+        grid-template-columns: 1fr;
+       
+    }
 }
 
 .work__left{
     flex: 3;
+     @include phones{
+       
+
+    }
 }
 
 .work__right{
@@ -12,4 +30,17 @@
     flex-direction: column;
     justify-content: space-between;
     height: 380px;
+
+     @include tablets{
+        grid-row: 2/3;
+        padding: 0 18%;
+       
+    }
+
+    @include phones{
+        text-align: left;
+        padding: 0;
+    }
+
+   
 }

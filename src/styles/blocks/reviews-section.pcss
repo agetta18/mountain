@@ -4,4 +4,8 @@
 
 .block__section{
     display: flex;
+
+    @include phones{
+        flex-direction: column;
+    }
 }

@@ -6,13 +6,32 @@
     display: flex;
     flex:1;
     justify-content: space-between;
+
+    @include desktop{
+        flex-direction: column;
+        flex: 1;
+    }
+
+    @include tablets{
+        justify-content: flex-start;
+        margin-right: 40px;
+    }
+
+    @include phones{
+        margin-right: 0;
+       
+    }
 }
 
 .footer__content-year{
-  font-size: 48px;
-  color: rgba(255, 255, 255, 0.102);
-  line-height: 0.625;
-  font-weight: 700;
+    font-size: 48px;
+    color: rgba(255, 255, 255, 0.102);
+    line-height: 0.625;
+    font-weight: 700;
+
+    @include tablets{
+        margin-bottom: 30px;
+    }
 }
 
 
@@ -21,6 +40,10 @@
     flex-direction: column;
     flex:2;
     justify-content: space-between;
+
+    @include desktop{
+        flex: 3;
+    }
 }
 
 .footer__data-content{
@@ -29,6 +52,10 @@
     color: rgba(255, 255, 255, 0.302);
     line-height: 1.875;
     justify-content: space-between;
+
+    @include tablets{
+        flex-direction: column;
+    }
     
 
 }
@@ -37,10 +64,33 @@
     display: flex;
     padding: 100px 0;
     justify-content: space-between;
+
+    @include tablets{
+        padding: 60px 0 70px;
+    }
+
+    @include phones{
+        flex-direction: column;
+    }
+
 }
 
 .footer__data-col{
     width: 48%;
+
+    &--first{
+        width: 35%;
+
+        @include desktop{
+            width: 38%;
+        }
+    }
+
+    @include tablets{
+        width: 90%;
+    }
+
+
 }
 
 .footer__data-menu{
@@ -49,4 +99,17 @@
 
 .footer__data-text, .quote__text{
     margin-bottom: 25px;
+
+    @include tablets{
+        margin-bottom: 20px;
+
+    }
+}
+
+.quote__text{
+    @include tablets{
+        margin-top: 59px;
+
+    }
+
 }

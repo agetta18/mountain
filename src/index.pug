@@ -7,15 +7,31 @@ html(lang="en")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
     title Portfolio | main page
+    script(src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js")
   body
     .wrapper
       .maincontent
         .welcome-section
+            .parallax
+                .parallax__layer(data-speed='0.1')
+                    img(src=require("images/parallax/mountain/1.png"), alt="").parallax__pic
+                .parallax__layer(data-speed='0.25')
+                    img(src=require("images/parallax/mountain/2.png"), alt="").parallax__pic
+                .parallax__layer(data-speed='0.35')
+                    img(src=require("images/parallax/mountain/3.png"), alt="").parallax__pic
+                .parallax__layer(data-speed='0.40')
+                    img(src=require("images/parallax/mountain/4.png"), alt="").parallax__pic
+                .parallax__layer(data-speed='0.45')
+                    img(src=require("images/parallax/mountain/5.png"), alt="").parallax__pic
+                .parallax__layer(data-speed='0.48')
+                    img(src=require("images/parallax/mountain/6.png"), alt="").parallax__pic
+                .parallax__layer(data-speed='0.3')
+                    img(src=require("images/parallax/mountain/7.png"), alt="").parallax__pic
             section.hero
-                .container
+                .container.container__hero
                     header.header
                         .header__logo
-                            .logo BA
+                            .logo КА
                         .header__menu
                             nav.menu
                                 - var items = ['Главная','Обо мне','Навыки','Работы','Отзывы','Связаться'];
@@ -30,10 +46,14 @@ html(lang="en")
                                     li.socials__item
                                         a(href="").socials__link
                                             +icon(item, 'socials__icon')
+                        .menu__span
+                            span
+                            span
+                            span
                     .hero__content
                         .user-data
                             .user-data__desc Личный сайт <br> веб-разработчика
-                            h1.user-data__name Кошкина <br> Анастасия
+                            h2.user-data__name Кошкина <br> Анастасия
                     a(href="#").hero__bottom-btn.scroll-down__btn Скролл
                 
             section.about-section
@@ -108,7 +128,7 @@ html(lang="en")
                                                             .skill__circle-title= cell
             section.work
                 .container.work__container
-                    h2.section__title Мои работы
+                    h2.section__title.section__title--work Мои работы
                     .work__colls
                         .work__left
                             .slider
@@ -132,7 +152,7 @@ html(lang="en")
                                     ul.tags__list
                                         each tag in tags 
                                             li.tag__item #{tag}
-                            h2.section__title.section__title-work Сайт школы образования
+                            h2.section__title.section__title--school Сайт школы образования
                             .work__desc-text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
                             a(href="").iconed-link
                                 .iconed-link__text Посмотреть сайт
@@ -142,6 +162,19 @@ html(lang="en")
                     svg(viewBox='0 0 1000 100' preserveAspectRatio='none').triangles__item.triangle
                         polygon(points='1000,0 1000,100 0,100')
         .last-section
+            .parallax-budda
+                .parallax__layer-budda
+                    img(src=require("images/parallax/budda/1.png"), alt="").parallax__pic-budda
+                .parallax__layer-budda
+                    img(src=require("images/parallax/budda/2.png"), alt="").parallax__pic-budda
+                .parallax__layer-budda
+                    img(src=require("images/parallax/budda/3.png"), alt="").parallax__pic-budda
+                .parallax__layer-budda
+                    img(src=require("images/parallax/budda/4.png"), alt="").parallax__pic-budda
+                .parallax__layer-budda
+                    img(src=require("images/parallax/budda/5.png"), alt="").parallax__pic-budda
+                .parallax__layer-budda
+                    img(src=require("images/parallax/budda/6.png"), alt="").parallax__pic-budda
             section.reviews
                 .container
                     .block__section
@@ -173,7 +206,7 @@ html(lang="en")
 
             section.contacts
                 .container
-                    h2.section__title Связаться со мной
+                    h2.section__title.section__title--contacts Связаться со мной
                     .contacts__form
                         form.form
                             .form__row
@@ -184,17 +217,17 @@ html(lang="en")
                                     ];
                                 each item in fields
                                     label.form-block(data-title=item[1])
-                                        .form-block__container
+                                        span.form-block__container
                                             +icon(`${item[0]}`, 'form-block__icon')
-                                            .form-block__field
+                                            span.form-block__field
                                                 input(type="text" placeholder=item[2]).form-block__input
                             .form__row.form__row-message
                                 label.form-block(data-title='Сообщение к письму')
-                                    .form-block__container.form-block__container--mes
+                                    span.form-block__container.form-block__container--mes
                                         +icon('message','form-block__icon')
-                                        .form-block__field
+                                        span.form-block__field
                                             textarea(placeholder='Требуется Ваша помощь в создании сайта. Интересуют сроки и цена вопроса.' rows="2").form-block__input.form-block__textarea
-                            .form__row
+                            .form__row.form__row-submit
                                 input(type='submit' value='отправить').form__btn.btn-violet
         footer.footer
             .container.footer__container
@@ -202,18 +235,18 @@ html(lang="en")
                     .footer__content-col
                         .footer__content-year &copy; 2019
                     .footer__content-info
-                        h4.footer__username Кошкина <br> Анастасия
-                        .footer__text Личный сайт <br> веб-разработчика
+                        h4.footer__username Кошкина Анастасия
+                        .footer__text Личный сайт веб-разработчика
                 .footer__data
                     nav.menu.menu--white.footer__data-menu
-                        ul.menu__list
+                        ul.menu__list.menu__list--footer
                             each item in items
                                 li.menu__item
                                     a.menu__link #{item}    
                     .footer__data-content
                         .footer__data-col.footer__data-col--first
                             .footer__data-text
-                                p Этот сайт я сделал в рамках обучения в <br> Школе онлайн образования LoftSchool. 
+                                p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. 
                             .footer__data-socials
                                 ul.socials.socials--modific
                                     each item in icons

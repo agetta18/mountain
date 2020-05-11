@@ -105,27 +105,8 @@ html(lang="en")
                                     .longtitle__decs 
                                         p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
                             .value-section__skill
-                                -
-                                    var skill = [
-                                        ['Front-end', ['HTML5',' CSS3', 'Javascript', 'Jquery и Vue.js']],
-                                        ['Workflow', ['GIT', 'Terminal', 'Gulp', 'Webpack']],
-                                    ];
-
-                                ul.skills-list
-                                    each row in skill
-                                        li.skills-list__item.skills-row
-                                            .skills-row__title #{row[0]}
-                                            ul.skills-row__list 
-                                                each cell in row[1]
-                                                    li.skill-row__item
-                                                        .skill
-                                                            svg(viewBox="0 0 150 150").skill__circle-shape
-                                                                circle(cx="75" cy="75" r="65").skill__circle.skill__circle-gray
-                                                                circle(cx="75" cy="75" r="65" stroke='url(#gradient)').skill__circle.skill__circle-gradient
-                                                                linearGradient(id="gradient" x1="0%" y1="0%" x2="100%" y2="0%")
-                                                                    stop(offset="0%" stop-color="#851bde")
-                                                                    stop(offset="100%" stop-color="#4d0bdf")
-                                                            .skill__circle-title= cell
+                                #skills-component
+                               
             section.work
                 .container.work__container
                     h2.section__title.section__title--work Мои работы
@@ -258,6 +239,9 @@ html(lang="en")
                                 .quote__text
                                     p Всегда пишите код так, будто сопровожать его будет склонный к насилию психопат, который знает, где вы живёте.
                                 .quote__text-name Martin Golding
+
+
+        include ./templates/entry.pug
 
 
 

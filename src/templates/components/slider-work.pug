@@ -1,0 +1,59 @@
+script(type='text/x-template')#slider-container
+    .work__colls
+       display(
+           :currentWork = 'currentWork'
+           :works = 'works'
+           :currentIndex='currentIndex'
+           @slide = 'handleSlide'
+       )
+       info(
+           :currentWork = 'currentWork'
+
+       )
+                                                    
+script(type='text/x-template')#slider-display
+    .preview__slider-bgpic(:data-slide='currentIndex + 1')
+        .work__left
+            .slider
+                img(:src="currentWork.photo", alt="").preview-pic
+                previews(
+                    :works='reversedWorks'
+                    :currentWork = 'currentWork'
+                )             
+                btns(
+                    @slide='$emit("slide", $event)'
+                )
+
+script(type='text/x-template')#slider-previews
+    .slider__preview
+        ul.previews
+            li.previews__item(
+                v-for='work in works' 
+                :key='work.id'
+                :class = "{active: currentWork.id === work.id}"
+            )
+                img(:src="work.photo", alt="").previews-pic--mini
+                        
+
+script(type='text/x-template')#slider-btns
+    .slider__buttons
+        .slider__button
+            button(@click.prevent='$emit("slide", "prev")').slider-buttons__item.slider-buttons__item--prev
+            button(@click.prevent='$emit("slide", "next")').slider-buttons__item.slider-buttons__item--next
+
+script(type='text/x-template')#slider-info
+    .work__right
+        tags(
+            :tags = 'tagsArray'
+        )
+        h2.section__title.section__title--school {{currentWork.title}}
+        .work__desc-text 
+            p {{currentWork.desc}}
+        a(:href="currentWork.link").iconed-link
+            .iconed-link__text Посмотреть сайт
+
+script(type='text/x-template')#slider-tags
+    .work__tags
+        ul.tags__list 
+            li.tag__item(v-for='tag in tags' :key='tags') {{tag}}
+                

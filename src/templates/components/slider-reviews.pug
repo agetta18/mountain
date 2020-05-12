@@ -1,0 +1,58 @@
+script(type='text/x-template')#reviews-container
+    .block__reviews
+        btn
+        slider(
+            :currentWork = 'currentWork'
+            :works = 'works'
+        )
+
+script(type='text/x-template')#reviews-btn
+    .block__section
+        h2.section__title Что обо мне говорят
+        .reviews__slider-button
+            button.slider-buttons__item.slider-buttons__item--left.slider-btn--reviews 
+            button.slider-buttons__item.slider-buttons__item--right.slider-btn--reviews 
+
+script(type='text/x-template')#reviews-slider
+    .reviews__slider-window
+        .reviews__slider
+            reviews(
+                :currentWork = 'currentWork'
+                :works = 'works'                
+            )
+            
+script(type='text/x-template')#reviews
+    ul.reviews__list
+        li.review__item(v-for='work in works' :key='work.id')
+            .review
+                reviewsText(
+                    :currentWork = 'currentWork'
+                    :works = 'works' 
+                )
+                user(
+                    :currentWork = 'currentWork'
+                    :works = 'works'
+                )
+                    
+script(type='text/x-template')#reviews-text
+    .review__content {{currentWork.message}}
+
+script(type='text/x-template')#reviews-user
+    .review__user
+        .user-info__avatar.user-info__avatar-rev
+           .avatar.avatar--review
+                img(:src="currentWork.photo", alt="").avatar__rew-pic
+        .user__content
+            .user__name {{currentWork.name}}
+            .user__position {{currentWork.position}}
+
+     
+
+        
+
+
+    
+
+
+
+

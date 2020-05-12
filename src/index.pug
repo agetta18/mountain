@@ -110,33 +110,8 @@ html(lang="en")
             section.work
                 .container.work__container
                     h2.section__title.section__title--work Мои работы
-                    .work__colls
-                        .work__left
-                            .slider
-                                +image('content/preview.jpg', 'preview-pic')
-                                .slider__preview
-                                    - var previews = [ 'content/2.jpg', 'content/3.jpg','content/4.jpg', 'content/5.jpg'];
-                                        ul.previews
-                                            each item in previews
-                                                li.previews__item
-                                                    +image(`${item}`,'previews-pic--mini')
-                                                    
-                                        
-                                .slider__buttons
-                                    .slider__button
-                                        button.slider-buttons__item.slider-buttons__item--prev 
-                                        button.slider-buttons__item.slider-buttons__item--next
-                                            
-                        .work__right
-                            .work__tags
-                                - var tags = ['HTML', 'CSS', 'Javascript'];
-                                    ul.tags__list
-                                        each tag in tags 
-                                            li.tag__item #{tag}
-                            h2.section__title.section__title--school Сайт школы образования
-                            .work__desc-text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
-                            a(href="").iconed-link
-                                .iconed-link__text Посмотреть сайт
+                    .work__components
+                        #slider-component
                 .triangles.work-section__triangles
                     svg(viewBox='0 0 1000 100' preserveAspectRatio='none').triangles__item.triangle
                         polygon(points='0,0 0,100 1000,100')
@@ -144,45 +119,21 @@ html(lang="en")
                         polygon(points='1000,0 1000,100 0,100')
         .last-section
             .parallax-budda
-                .parallax__layer-budda
+                .parallax__layer-budda(data-speed='0.05')
                     img(src=require("images/parallax/budda/1.png"), alt="").parallax__pic-budda
-                .parallax__layer-budda
+                .parallax__layer-budda(data-speed='0.5')
                     img(src=require("images/parallax/budda/2.png"), alt="").parallax__pic-budda
-                .parallax__layer-budda
+                .parallax__layer-budda(data-speed='1')
                     img(src=require("images/parallax/budda/3.png"), alt="").parallax__pic-budda
-                .parallax__layer-budda
+                .parallax__layer-budda(data-speed='1.8')
                     img(src=require("images/parallax/budda/4.png"), alt="").parallax__pic-budda
-                .parallax__layer-budda
+                .parallax__layer-budda(data-speed='3')
                     img(src=require("images/parallax/budda/5.png"), alt="").parallax__pic-budda
-                .parallax__layer-budda
+                .parallax__layer-budda(data-speed='4')
                     img(src=require("images/parallax/budda/6.png"), alt="").parallax__pic-budda
             section.reviews
                 .container
-                    .block__section
-                        h2.section__title Что обо мне говорят
-                        .reviews__slider-button
-                            button.slider-buttons__item.slider-buttons__item--left.slider-btn--reviews 
-                            button.slider-buttons__item.slider-buttons__item--right.slider-btn--reviews 
-                    .reviews__slider-window
-                        .reviews__slider
-                            -
-                                var users = [
-                                    ['Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!', 'content/user1.jpg', 'Ковальчук Дмитрий', 'Основатель LoftSchool'],
-                                    ['Этот код выдержит любые испытания. Только, пожалуйста, не загружайте сайт на слишком старых браузерах ', 'content/user2.jpg', 'Владимир Сабанцев', 'Преподаватель']
-                                    
-                                ];
-                            ul.reviews__list
-                                each user in users
-                                    li.review__item
-                                        .review
-                                            .review__content  #{user[0]}
-                                            .review__user
-                                                .user-info__avatar.user-info__avatar-rev
-                                                    .avatar.avatar--review
-                                                        +image(`${user[1]}`,'avatar__rew-pic')
-                                                .user__content
-                                                    .user__name #{user[2]}
-                                                    .user__position #{user[3]}
+                    #reviews-component
                                                 
 
             section.contacts
@@ -242,6 +193,13 @@ html(lang="en")
 
 
         include ./templates/entry.pug
+  
+
+
+
+   
+    
+
 
 
 

@@ -37,27 +37,27 @@
         }
     }
 
-    &-active{
-        border: 2px solid #5500f2;
-    }
-
   
+}
+
+.active{
+     border: 2px solid #5500f2;
 }
 
 .slider__preview{
     position: absolute;
     right: 0;
-    bottom: -32px;
+    bottom: -86px;
     height: 88%;
     overflow: hidden;
 
     @include desktop{
-        bottom: 0;
+        bottom: -32px;
         height: 80%;
     }
 
     @include tablets{
-        bottom: -18px;
+        bottom: -58px;
 
     }
 
@@ -65,4 +65,37 @@
         display: none;
     }
 
+}
+
+.preview__slider-bgpic{
+    &:before{
+        content: attr(data-slide);
+        position: absolute;
+        top: 48%;
+        transform: translateY(-60%);
+        left: 59%;
+        font-size: 400px;
+      
+        color: rgb(230, 230, 230);
+        font-weight: 800;
+        z-index: -1;
+
+
+        @include desktop{
+            top:60%;
+            left: 59%;
+
+        }
+
+        @include tablets{
+            top: 28%;
+            left: 85%;
+        }
+
+        @include phones{
+            display: none;
+        }
+  
+
+    }
 }

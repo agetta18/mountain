@@ -72,7 +72,15 @@
         transform-origin: 0 50%;
         transform: scale(1.125) translateY(45px);
         transition: .6s;
+
+        @include desktop{
+            top:-25PX;
+        }
         
+
+        @include tablets{
+            top: -20PX;
+        }
         
     }
 
@@ -95,7 +103,7 @@
         padding-top:30PX;
         padding-bottom: 20PX;
         padding-left: 45PX;
-        border-bottom: 2px solid $text-color;
+        border-bottom: 1px solid $text-color;
         transition: .6s;
         color: currentColor;
         font-size: 18px;

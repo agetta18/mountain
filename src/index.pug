@@ -14,24 +14,24 @@ html(lang="en")
         .welcome-section
             .parallax
                 .parallax__layer(data-speed='0.1')
-                    img(src=require("images/parallax/mountain/1.png"), alt="").parallax__pic
+                    img(src=require("images/parallax/mountain/1.png"), alt="bg").parallax__pic
                 .parallax__layer(data-speed='0.25')
-                    img(src=require("images/parallax/mountain/2.png"), alt="").parallax__pic
+                    img(src=require("images/parallax/mountain/2.png"), alt="mountain").parallax__pic
                 .parallax__layer(data-speed='0.35')
-                    img(src=require("images/parallax/mountain/3.png"), alt="").parallax__pic
+                    img(src=require("images/parallax/mountain/3.png"), alt="baloon").parallax__pic
                 .parallax__layer(data-speed='0.40')
-                    img(src=require("images/parallax/mountain/4.png"), alt="").parallax__pic
+                    img(src=require("images/parallax/mountain/4.png"), alt="cloud").parallax__pic
                 .parallax__layer(data-speed='0.45')
-                    img(src=require("images/parallax/mountain/5.png"), alt="").parallax__pic
+                    img(src=require("images/parallax/mountain/5.png"), alt="man").parallax__pic
                 .parallax__layer(data-speed='0.48')
-                    img(src=require("images/parallax/mountain/6.png"), alt="").parallax__pic
+                    img(src=require("images/parallax/mountain/6.png"), alt="mountain").parallax__pic
                 .parallax__layer(data-speed='0.3')
-                    img(src=require("images/parallax/mountain/7.png"), alt="").parallax__pic
+                    img(src=require("images/parallax/mountain/7.png"), alt="cloud").parallax__pic
             section.hero
                 .container.container__hero
                     header.header
                         .header__logo
-                            .logo КА
+                            h2.logo КА
                         .header__menu
                             nav.menu
                                 - var items = ['Главная','Обо мне','Навыки','Работы','Отзывы','Связаться'];
@@ -63,7 +63,7 @@ html(lang="en")
                             .user-info
                                 .user-info__avatar
                                     .avatar
-                                        +image('content/user.jpg', 'avatar__img')
+                                        +image('content/user.jpg', 'avatar__img', 'avatar')
                                 .user-info__content
                                     -
                                         var userdata = [
@@ -97,7 +97,7 @@ html(lang="en")
                 .container.container__values
                     .values-section__content
                         .value-section__pic
-                            +image('content/backpack.jpg', 'backpack__img')
+                            +image('content/backpack.jpg', 'backpack__img', 'backpack')
                         .values-section__title 
                             .value-section__title--content
                                 .longtitle
@@ -120,17 +120,17 @@ html(lang="en")
         .last-section
             .parallax-budda
                 .parallax__layer-budda(data-speed='0.05')
-                    img(src=require("images/parallax/budda/1.png"), alt="").parallax__pic-budda
+                    img(src=require("images/parallax/budda/1.png"), alt="bg").parallax__pic-budda
                 .parallax__layer-budda(data-speed='0.5')
-                    img(src=require("images/parallax/budda/2.png"), alt="").parallax__pic-budda
+                    img(src=require("images/parallax/budda/2.png"), alt="mountain").parallax__pic-budda
                 .parallax__layer-budda(data-speed='1')
-                    img(src=require("images/parallax/budda/3.png"), alt="").parallax__pic-budda
+                    img(src=require("images/parallax/budda/3.png"), alt="budda").parallax__pic-budda
                 .parallax__layer-budda(data-speed='1.8')
-                    img(src=require("images/parallax/budda/4.png"), alt="").parallax__pic-budda
+                    img(src=require("images/parallax/budda/4.png"), alt="cloud").parallax__pic-budda
                 .parallax__layer-budda(data-speed='3')
-                    img(src=require("images/parallax/budda/5.png"), alt="").parallax__pic-budda
+                    img(src=require("images/parallax/budda/5.png"), alt="cloud").parallax__pic-budda
                 .parallax__layer-budda(data-speed='4')
-                    img(src=require("images/parallax/budda/6.png"), alt="").parallax__pic-budda
+                    img(src=require("images/parallax/budda/6.png"), alt="cloud").parallax__pic-budda
             section.reviews
                 .container
                     #reviews-component

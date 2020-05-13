@@ -148,17 +148,19 @@ html(lang="en")
                                         ['envelope','Введите Ваш email','loftschool@study.com']
                                     ];
                                 each item in fields
-                                    label.form-block(data-title=item[1])
+                                    label.form-block
+                                        input(type="text" required).form-block__input
+                                        span.form-block__field #{item[1]}
                                         span.form-block__container
                                             +icon(`${item[0]}`, 'form-block__icon')
-                                            span.form-block__field
-                                                input(type="text" placeholder=item[2]).form-block__input
+                                                            
                             .form__row.form__row-message
-                                label.form-block(data-title='Сообщение к письму')
+                                label.form-block
+                                    textarea(placeholder='Требуется Ваша помощь в создании сайта. Интересуют сроки и цена вопроса.' rows="2").form-block__input.form-block__textarea
+                                    span.form-block__field Сообщение к письму
                                     span.form-block__container.form-block__container--mes
                                         +icon('message','form-block__icon')
-                                        span.form-block__field
-                                            textarea(placeholder='Требуется Ваша помощь в создании сайта. Интересуют сроки и цена вопроса.' rows="2").form-block__input.form-block__textarea
+                                        
                             .form__row.form__row-submit
                                 input(type='submit' value='отправить').form__btn.btn-violet
         footer.footer

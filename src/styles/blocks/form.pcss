@@ -3,6 +3,9 @@
     height: 30px;
     fill: currentColor;
     opacity: .3;
+    position: absolute;
+    left: 0;
+    top: 23PX;
 }
 
 .form__row{
@@ -39,7 +42,6 @@
 }
 
 .form-block{
-    border-bottom: 1px solid currentColor;
     margin-right: 97px;
     flex: 1;
     cursor: pointer;
@@ -47,41 +49,35 @@
 
     &:last-child{
         margin-bottom: 0;
-
     }
 
     @include phones{
         width: 100%;
-       margin-bottom: 40px;
+        margin-bottom: 40px;
         
     }
    
-    &:hover{
-        border-bottom: 1px solid #5500f2;
-
-        & .form-block__icon{
-            fill:#5500f2;
-            opacity: .8;
-        }
-        
-    }
+ 
 
     &__field{
         flex:1;
-    }
-
-    &:last-child{
-        margin-right: 0;
-    }
-
-    &:before{
-        content: attr(data-title);
         display: block;
         font-size: 16px;
         color: rgba(70, 77, 98, 0.302);
         line-height: 1.875;
         font-weight: bold;
-        margin-left: 47px;   
+        margin-left: 45PX; 
+        top: -28PX;
+        position: absolute;
+        transform-origin: 0 50%;
+        transform: scale(1.125) translateY(45px);
+        transition: .6s;
+        
+        
+    }
+
+    &:last-child{
+        margin-right: 0;
     }
 
     &__container{
@@ -96,17 +92,48 @@
         border: none;
         color: rgb(70, 77, 98);
         width: 100%;
-        margin-left: 15px;
+        padding-top:30PX;
+        padding-bottom: 20PX;
+        padding-left: 45PX;
+        border-bottom: 2px solid $text-color;
+        transition: .6s;
+        color: currentColor;
+        font-size: 18px;
+        font-weight: bold;
+           
+       
  
         &::placeholder {
             color: currentColor;
             font-size: 18px;
             font-weight: bold;
-            line-height: 2;  
+            line-height: 2;     
         }
 
         &:focus{
             outline: none;
+            border-bottom-color: #5500f2;
+
+            & ~ {
+                .form-block__field{
+                     transform: scale(1) translateY(0);
+                }
+
+                .form-block__container svg{
+                    fill:#5500f2;
+                    opacity: 1;
+                    transition: .6s;
+                }
+            }
+        }
+
+        &:valid{
+            & ~ {
+                .form-block__field{
+                     transform: scale(1) translateY(0);
+                }
+            }
+
         }
 
        

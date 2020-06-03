@@ -1,4 +1,10 @@
 import Vue from 'vue';
+import axios from 'axios';
+
+const request = axios.create({
+    baseURL:"https://webdev-api.loftschool.com"
+});
+
 
 const previews = {
     template: '#slider-previews',
@@ -86,11 +92,24 @@ new Vue({
                 return item;
             });
         },
-
+        // makeArrWithRequireImages(array){
+        //     return array.map(item =>{
+        //         item.photo = "https://webdev-api.loftschool.com"+item.photo;
+                
+        //         return item;
+        //     });
+        // },
     },
+
     created() {
         const data = require('../data/slider-work.json');
         this.works = this.makeArrWithRequireImages(data);
         
-    }
+    },
+
+    //  async created() {
+    //      const {data} = await request.get('/works/338');
+    //      this.works = this.makeArrWithRequireImages(data);
+        
+    // }
 });

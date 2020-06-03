@@ -1,97 +1,45 @@
-.review{
+.reviews {
     display: flex;
+    flex-wrap: wrap;
+    padding-left: 210px;
+    padding-top: 138px;
     flex-direction: column;
-    font-size: 16px;
-    color: rgba(70, 77, 98, 0.502);
-    line-height: 1.875;
-    font-weight: 700;
-    width: 70%;
-    justify-content: space-between;
-    z-index: 10;
-    @include tablets{
-        width: 82%;
-        
-    }
-     @include phones{
-        width: 260PX;
-    }
 
+    @include desktop {
+        padding-top: 46px;
+        padding-left: 60px;
+    }
+    @include tablets {
+        padding-top: 138px;
+        padding-left: 44px;
+    }
+    @include phones {
+        padding-top: 86px;
+        padding-left: 0;
+    }
 }
 
-.review__user{
+.reviews__title {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 88%;
-
-    @include desktop{
-        width: 80%;
+    width: 100%;
+    @include phones {
+        justify-content: center;
     }
+}
 
-    @include tablets{
-        width: 90%;
+.reviews__list {
+    display: flex;
+    justify-content: space-between
+}
 
-    }
-    @include phones{
+.reviews__slider {
+    width: 1000px;
+    margin-top: 64px;
+    @include tablets {
         width: 100%;
-      
     }
-     
-}
-
-.user__position{
-    font-size: 16px;
-    color: rgba(70, 77, 98, 0.302);
-    line-height: 1.875;
-}
-
-.user__name{
-    font-size: 18px;;
-    color: rgb(70, 77, 98);
-    font-weight: bold;
-    line-height: 2.667;
- 
-}
-
-.reviews__list{
-    display: flex;  
-}
-
-.review__item{
-    display: flex;
-    flex: 1;
-
-    @include phones{
-        width: 260PX;
-        margin-right: 10%;
+    @include phones {
+        margin-top: 100px;
+        margin-bottom: 100px;
     }
-    
-    &::before{
-        content: "";
-        display: block;
-        background: svg-load('quote.svg', fill=rgba(70, 77, 98, 0.1), width=100%, height=100%) center center no-repeat;
-        width: 75px;
-        height: 65px;
-        margin-right: 10px;
-
-        @include desktop {
-            margin-right: 20px;
-        }
-
-        @include tablets{
-            width: 30px;
-            height: 40px;
-        }
-
-        @include phones{
-            display: none;
-        }
-     
-    } 
-    
-
-}
-
-.review__content{
-    margin-bottom: 25px;
 }

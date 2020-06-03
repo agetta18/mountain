@@ -3,24 +3,36 @@
         .content
             slot
         .desc Панель администрирования
-        button(
-            type='button'
-            @click=''
-           
-        ).logout Выйти
+        logout.tablets
 </template>
 
 <script>
+import logout from '../logout/logout.vue';
 export default {
+    components: {
+        logout
+      
+    },
     
 }
 </script>
 
+
+
 <style lang='postcss'>
+@import '../../default.pcss';
+    .tablets{
+        @include phones{
+            display: none;
+        }
+    }
     .desc{
         font-size: 14px;
         line-height: 2.429; 
         opacity: .5;
+        @include phones{
+            display: none !important;
+        }
     }
 
     .logout{

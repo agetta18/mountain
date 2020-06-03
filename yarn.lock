@@ -1171,6 +1171,14 @@
     "@babel/helper-create-regexp-features-plugin" "^7.8.3"
     "@babel/helper-plugin-utils" "^7.8.3"
 
+"@babel/polyfill@^7.10.1":
+  version "7.10.1"
+  resolved "https://registry.yarnpkg.com/@babel/polyfill/-/polyfill-7.10.1.tgz#d56d4c8be8dd6ec4dce2649474e9b707089f739f"
+  integrity sha512-TviueJ4PBW5p48ra8IMtLXVkDucrlOZAIZ+EXqS3Ot4eukHbWiqcn7DcqpA1k5PcKtmJ4Xl9xwdv6yQvvcA+3g==
+  dependencies:
+    core-js "^2.6.5"
+    regenerator-runtime "^0.13.4"
+
 "@babel/preset-env@^7.3.1":
   version "7.3.4"
   resolved "https://registry.yarnpkg.com/@babel/preset-env/-/preset-env-7.3.4.tgz#887cf38b6d23c82f19b5135298bdb160062e33e1"
@@ -2771,6 +2779,13 @@ aws4@^1.8.0:
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.8.0.tgz#f0e003d9ca9e7f59c7a508945d7b2ef9a04a542f"
   integrity sha512-ReZxvNHIOv88FlT7rxcXIIC0fPt4KZqZbOlivyWtXLt8ESx84zd3kMC6iK5jVeS2qt+g7ftS7ye4fi06X5rtRQ==
 
+axios@^0.19.2:
+  version "0.19.2"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.19.2.tgz#3ea36c5d8818d0d5f8a8a97a6d36b86cdc00cb27"
+  integrity sha512-fjgm5MvRHLhx+osE2xoekY70AhARk3a6hkN+3Io1jc00jtquGvxYlKlsFUhmUET0V5te6CcZI7lcv2Ym61mjHA==
+  dependencies:
+    follow-redirects "1.5.10"
+
 babel-code-frame@^6.22.0:
   version "6.26.0"
   resolved "https://registry.yarnpkg.com/babel-code-frame/-/babel-code-frame-6.26.0.tgz#63fd43f7dc1e3bb7ce35947db8fe369a3f58c74b"
@@ -4106,6 +4121,11 @@ core-js@^2.4.0:
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.6.5.tgz#44bc8d249e7fb2ff5d00e0341a7ffb94fbf67895"
   integrity sha512-klh/kDpwX8hryYL14M9w/xei6vrv6sE8gTHDG7/T/+SEovB/G4ejwcfE/CBzO6Edsu+OETZMZ3wcX/EjUkrl5A==
 
+core-js@^2.6.5:
+  version "2.6.11"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.6.11.tgz#38831469f9922bded8ee21c9dc46985e0399308c"
+  integrity sha512-5wjnpaT/3dV+XB4borEsnAYQchn00XSgTAWKDkEqv+K8KevjbzmofK6hfJ9TZIlpj2N0xQpazy7PiRQiWHqzWg==
+
 core-js@^3.0.1, core-js@^3.0.4:
   version "3.6.5"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.6.5.tgz#7395dc273af37fb2e50e9bd3d9fe841285231d1a"
@@ -4443,6 +4463,13 @@ debug@2.6.9, debug@^2.1.2, debug@^2.2.0, debug@^2.3.3, debug@^2.6.0:
   version "2.6.9"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"
   integrity sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==
+  dependencies:
+    ms "2.0.0"
+
+debug@=3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/debug/-/debug-3.1.0.tgz#5bb5a0672628b64149566ba16819e61518c67261"
+  integrity sha512-OX8XqP7/1a9cqkxYw2yXss15f26NKWBpDXQd0/uK/KPqdQhxbPa994hnzjcE2VqQpDslf55723cKPUOGSmMY3g==
   dependencies:
     ms "2.0.0"
 
@@ -5482,6 +5509,13 @@ focus-lock@^0.6.7:
   resolved "https://registry.yarnpkg.com/focus-lock/-/focus-lock-0.6.8.tgz#61985fadfa92f02f2ee1d90bc738efaf7f3c9f46"
   integrity sha512-vkHTluRCoq9FcsrldC0ulQHiyBYgVJB2CX53I8r0nTC6KnEij7Of0jpBspjt3/CuNb6fyoj3aOh9J2HgQUM0og==
 
+follow-redirects@1.5.10:
+  version "1.5.10"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.5.10.tgz#7b7a9f9aea2fdff36786a94ff643ed07f4ff5e2a"
+  integrity sha512-0V5l4Cizzvqt5D44aTXbFZz+FtyXV1vrDN6qrelxtfYQKW0KO0W2T/hkE8xvGa/540LkZlkaUjO4ailYTFtHVQ==
+  dependencies:
+    debug "=3.1.0"
+
 follow-redirects@^1.0.0:
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.7.0.tgz#489ebc198dc0e7f64167bd23b03c4c19b5784c76"
@@ -6014,6 +6048,11 @@ homedir-polyfill@^1.0.1:
   integrity sha512-eSmmWE5bZTK2Nou4g0AI3zZ9rswp7GRKoKXS1BLUkvPviOqs4YTN1djQIqrXy9k5gEtdLPy86JjRwsNM9tnDcA==
   dependencies:
     parse-passwd "^1.0.0"
+
+hooper@^0.3.4:
+  version "0.3.4"
+  resolved "https://registry.yarnpkg.com/hooper/-/hooper-0.3.4.tgz#afb425d23f47f931ce2a9c00b755992cb0e2bcf9"
+  integrity sha512-hV1c+MCiCfVjltdvZIgTrGYHInvhKiNLVNOT/hRWbfjZNIS9H6F6ZUPeaxhxrYkjsEL96Z0RIs+4YPoBqrrrHQ==
 
 hpack.js@^2.1.6:
   version "2.1.6"
@@ -11770,6 +11809,11 @@ void-elements@^2.0.1:
   resolved "https://registry.yarnpkg.com/void-elements/-/void-elements-2.0.1.tgz#c066afb582bb1cb4128d60ea92392e94d5e9dbec"
   integrity sha1-wGavtYK7HLQSjWDqkjkulNXp2+w=
 
+vue-axios@^2.1.5:
+  version "2.1.5"
+  resolved "https://registry.yarnpkg.com/vue-axios/-/vue-axios-2.1.5.tgz#1af4bf1218ed71309c76afb38d0f683e312c24a7"
+  integrity sha512-th5xVbInVoyIoe+qY+9GCflEVezxAvztD4xpFF39SRQYqpoKD2qkmX8yv08jJG9a2SgNOCjirjJGSwg/wTrbmA==
+
 vue-hot-reload-api@^2.3.0:
   version "2.3.3"
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.3.3.tgz#2756f46cb3258054c5f4723de8ae7e87302a1ccf"
@@ -11786,10 +11830,10 @@ vue-loader@^15.6.4:
     vue-hot-reload-api "^2.3.0"
     vue-style-loader "^4.1.0"
 
-vue-router@^3.0.2:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-3.0.2.tgz#dedc67afe6c4e2bc25682c8b1c2a8c0d7c7e56be"
-  integrity sha512-opKtsxjp9eOcFWdp6xLQPLmRGgfM932Tl56U9chYTnoWqKxQ8M20N7AkdEbM5beUh6wICoFGYugAX9vQjyJLFg==
+vue-router@^3.3.2:
+  version "3.3.2"
+  resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-3.3.2.tgz#0099de402edb2fe92f9711053ab5a2156f239cad"
+  integrity sha512-5sEbcfb7MW8mY8lbUVbF4kgcipGXsagkM/X+pb6n0MhjP+RorWIUTPAPSqgPaiPOxVCXgAItBl8Vwz8vq78faA==
 
 vue-style-loader@^4.1.0:
   version "4.1.2"
@@ -11816,6 +11860,16 @@ vue@^2.6.7:
   version "2.6.8"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.8.tgz#f21cbc536bfc14f7d1d792a137bb12f69e60ea91"
   integrity sha512-+vp9lEC2Kt3yom673pzg1J7T1NVGuGzO9j8Wxno+rQN2WYVBX2pyo/RGQ3fXCLh2Pk76Skw/laAPCuBuEQ4diw==
+
+vuelidate@^0.7.5:
+  version "0.7.5"
+  resolved "https://registry.yarnpkg.com/vuelidate/-/vuelidate-0.7.5.tgz#ff48c75ae9d24ea24c24e9ea08065eda0a0cba0a"
+  integrity sha512-GAAG8QAFVp7BFeQlNaThpTbimq3+HypBPNwdkCkHZZeVaD5zmXXfhp357dcUJXHXTZjSln0PvP6wiwLZXkFTwg==
+
+vuex@^3.4.0:
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/vuex/-/vuex-3.4.0.tgz#20cc086062d750769fce1febb34e7fceeaebde45"
+  integrity sha512-ajtqwEW/QhnrBZQsZxCLHThZZaa+Db45c92Asf46ZDXu6uHXgbfVuBaJ4gzD2r4UX0oMJHstFwd2r2HM4l8umg==
 
 warning@^4.0.2, warning@^4.0.3:
   version "4.0.3"

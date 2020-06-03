@@ -1,21 +1,21 @@
 script(type='text/x-template')#slider-container
     .work__colls
-       display(
-           :currentWork = 'currentWork'
-           :works = 'works'
-           :currentIndex='currentIndex'
-           @slide = 'handleSlide'
-       )
-       info(
-           :currentWork = 'currentWork'
+        display(
+            :currentWork = 'currentWork'
+            :works = 'works'
+            :currentIndex='currentIndex'
+            @slide = 'handleSlide'
+        )
+        info(
+            :currentWork = 'currentWork'
 
-       )
+        )
                                                     
 script(type='text/x-template')#slider-display
     .preview__slider-bgpic(:data-slide='currentIndex + 1')
         .work__left
             .slider
-                img(:src="currentWork.photo", alt="").preview-pic
+                img(:src="currentWork.photo", alt="").preview-pic 
                 previews(
                     :works='reversedWorks'
                     :currentWork = 'currentWork'
@@ -23,6 +23,7 @@ script(type='text/x-template')#slider-display
                 btns(
                     @slide='$emit("slide", $event)'
                 )
+              
 
 script(type='text/x-template')#slider-previews
     .slider__preview
@@ -47,6 +48,7 @@ script(type='text/x-template')#slider-info
             :tags = 'tagsArray'
         )
         h2.section__title.section__title--school {{currentWork.title}}
+      
         .work__desc-text 
             p {{currentWork.desc}}
         a(:href="currentWork.link").iconed-link

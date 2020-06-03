@@ -1,60 +1,69 @@
-import Vue from 'vue';
+import Vue from "vue";
+import { Hooper, Slide, Navigation as HooperNavigation } from "hooper";
+import "hooper/dist/hooper.css";
 
-const btn = {
-    template: '#reviews-btn'
-};
+import axios from 'axios';
 
-const reviewsText = {
-    template: '#reviews-text',
-    props:['currentWork', 'works']
-};
-
-const user = {
-    template: '#reviews-user',
-    props:['currentWork']
-};
-
-const reviews = {
-    template: '#reviews',
-    components: {reviewsText, user},
-    props:['currentWork', 'works']
-};
+const request = axios.create({
+    baseURL:"https://webdev-api.loftschool.com"
+});
 
 
-const slider = {
-    template: '#reviews-slider',
-    components: {reviews},
-    props:['currentWork', 'works']
-   
-};
-
-
-new Vue ({
-    el:"#reviews-component",
-    template:"#reviews-container",
-    components: { btn, slider },
-
+new Vue({
+    el: "#reviewsSlider",
+    template: "#reviews-slider",
+    components: {
+        Hooper,
+        Slide,
+        HooperNavigation,
+    },
     data() {
         return {
-            works:[],
-            currentWork: [],
-            currentIndex: 0,
-        }
-    },
-    methods: {
-        imagesWay(array){
-            return array.map(item => {
-                const requirePic = require(`../images/user/${item.photo}`);
-                item.photo = requirePic;
-                return item;
-            });
+        reviews: [],
+        hooperSettings: {
+            itemsToShow: 1,
+            itemsToSlide: 1,
+            breakpoints: {
+            321: {
+                itemsToShow: 2,
+                itemsToSlide: 2,
+            },
+            },
         },
+        };
     },
-    created() {
-        const data = require('../data/slider-reviews.json');
-        this.works = this.imagesWay(data);
-        this.currentWork = this.works[this.currentIndex];
-    }
+    // methods: {
+    //     makeArrWithRequireImages(array) {
+    //         return array.map((item) => {
+    //             const requirePic = require(`../images/user/${item.photo}`);
+    //             item.photo = requirePic;
 
-  
+    //             return item;
+    //         });
+    //     },
+    // },
+    // created() {
+    //      const data = require("../data/slider-reviews.json");
+    //      this.reviews = this.makeArrWithRequireImages(data);
+    // },
+
+    methods:{
+        makeArrWithUploadedImages(array) {
+            return array.map((item) => {
+              
+              item.photo = "https://webdev-api.loftschool.com/"+item.photo;
+              return item;
+            });
+          },
+        
+       
+    },
+    async created() {
+        const {data} = await request.get("/reviews/338");
+        
+        this.reviews = this.makeArrWithUploadedImages(data);
+      }
+   
+
+
 });

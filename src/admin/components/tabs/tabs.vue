@@ -1,78 +1,68 @@
 <template lang="pug">
     .tabs-component
         ul.list
-            li.item(v-for ="tab in tabs" :key="tab.id"
-                    :class= "{'active' : activeTabId === tab.id}")
-                button(
-                    type='button'
-                    @click = 'handleChange(tab)'
-                ).btn {{tab.title}}
+            li.item(v-for='tab in tabs')
+                router-link(
+                    :data-text='tab.title'
+                    :to="tab.href" 
+                    exact-active-class="item--active"
+                ).tabs__link {{tab.title}}
 </template>
 
 <script>
 
-
-const tabs = [
-    {id: 0, title: 'Обо мне'},
-    {id: 1, title: 'Работы'},
-    {id: 2, title: 'Отзывы'}
-]
 export default {
     data() {
-        return{
-            tabs,
-            activeTabId: 0
-        }
+        return {
+            tabs: [
+                { title: "Обо мне", href: "/" },
+                { title: "Работы", href: "/works" },
+                { title: "Отзывы", href: "/reviews" },
+            ],
+        };
     },
-    methods: {
-        handleChange(tab) {
-            this.activeTabId = tab.id;
-            this.$emit('tabChange', tab);
+};
 
-        }
-
-    }
-
-    
-}
 </script>
 
+
+
 <style lang="postcss">
-    .tabs-component{
-        display: flex;
-       
 
+    .tabs {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        background: #fff;
+        padding-left: 60px;
     }
 
-    .list{
+    .list {
         display: flex;
-        list-style-type: none;
+        width: 100%;   
     }
 
-    .item{
-        position: relative;
-        
+    .item {
+        display: flex;
+        padding: 30px;
+        cursor: pointer;
 
-        &.active{
-            color: #383bcf;
-            &:before{
-                content: '';
-                position: absolute;
-                display: block;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                height: 3px;
-                background: #383bcf;
-            }
+        &--active {
+            border-bottom: 3px solid #383bcf;
+        }
+
+        &--active .tabs__link {
+            font-weight: bold;
         }
     }
 
-    .btn {
-        padding: 30px;
-        outline: none;
-        background: transparent;
-        border: none;
-        cursor: pointer;
-    }
+    &__link {
+        color: #414c63;
+        font-family: "Open Sans";
+        font-weight: 400;
+        font-size: 16px;
+        text-decoration: none;
+    } 
+
 </style>

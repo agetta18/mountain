@@ -50,7 +50,6 @@ new Vue({
     methods:{
         makeArrWithUploadedImages(array) {
             return array.map((item) => {
-              
               item.photo = "https://webdev-api.loftschool.com/"+item.photo;
               return item;
             });

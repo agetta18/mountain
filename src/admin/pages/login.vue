@@ -189,7 +189,7 @@ export default {
         cursor: pointer;
         @include phones{
             padding: 32px 85px;
-             border-radius: 40px 5px 40px 5px;
+            border-radius: 40px 5px 40px 5px;
         }
        
     }

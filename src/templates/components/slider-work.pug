@@ -1,5 +1,7 @@
 script(type='text/x-template')#slider-container
-    .work__colls
+
+    .work__colls 
+        //- pre {{currentWork.photo}}
         display(
             :currentWork = 'currentWork'
             :works = 'works'
@@ -50,7 +52,7 @@ script(type='text/x-template')#slider-info
         h2.section__title.section__title--school {{currentWork.title}}
       
         .work__desc-text 
-            p {{currentWork.desc}}
+            p {{currentWork.description}}
         a(:href="currentWork.link").iconed-link
             .iconed-link__text Посмотреть сайт
 

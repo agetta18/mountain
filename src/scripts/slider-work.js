@@ -39,7 +39,7 @@ const info= {
     props: ['currentWork'],
     computed: {
         tagsArray(){
-            return this.currentWork.skills.split(',');
+            return this.currentWork.techs.split(',');
         }
     }
 };
@@ -84,32 +84,33 @@ new Vue({
                     break;
             }
         },
-        makeArrWithRequireImages(array){
-            return array.map(item =>{
-                const requirePic = require(`../images/content/${item.photo}`);
-                item.photo = requirePic;
-                
-                return item;
-            });
-        },
         // makeArrWithRequireImages(array){
         //     return array.map(item =>{
-        //         item.photo = "https://webdev-api.loftschool.com"+item.photo;
+        //         const requirePic = require(`../images/content/${item.photo}`);
+        //         item.photo = requirePic;
                 
         //         return item;
         //     });
         // },
+        makeArrWithRequireImages(array){
+            return array.map(item =>{
+                item.photo = "https://webdev-api.loftschool.com/"+item.photo;
+                
+                return item;
+            });
+        },
     },
 
-    created() {
-        const data = require('../data/slider-work.json');
-        this.works = this.makeArrWithRequireImages(data);
+    // created() {
+    //     const data = require('../data/slider-work.json');
+    //     this.works = this.makeArrWithRequireImages(data);
         
-    },
+    // },
 
-    //  async created() {
-    //      const {data} = await request.get('/works/338');
-    //      this.works = this.makeArrWithRequireImages(data);
+     async created() {
+         const {data} = await request.get('/works/338');
+         console.log(data);
+         this.works = this.makeArrWithRequireImages(data);
         
-    // }
+    }
 });

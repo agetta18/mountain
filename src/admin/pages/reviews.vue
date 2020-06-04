@@ -1,5 +1,5 @@
 <template lang="pug">
-    .page-reviews
+    .page-reviews.page
         .page-container
             h2.page-title Блок &laquo;Отзывы&raquo;
             review-form(v-if="editorVisible" :selectedReview="currentReview")
@@ -60,8 +60,11 @@ export default {
         font-family: "OpenSans";
         color: rgb(65, 76, 99);
         line-height: 1.875;
+        margin-top: 20PX !important;
+       
         @include tablets{
             margin-top: 20PX !important; 
+
         }
       
     }
@@ -77,10 +80,11 @@ export default {
         font-family: "OpenSans";
         color: rgb(56, 59, 207);
         line-height: 2.118;
-        margin-right: 56px;
+        margin-right: 56px !important;
         cursor: pointer;
         @include phones{
             padding-right: 30px;
+            margin-right: 0 !important;
         }
     }
 
@@ -396,6 +400,7 @@ export default {
 
     
     .btn-reviews{
+        margin-top: 20PX;
         margin-left: 46%;
         @include tablets{
             margin-left: 26%;
@@ -434,7 +439,6 @@ export default {
         @include phones{
             padding-right:0;
         }
-
 
     }
 </style>

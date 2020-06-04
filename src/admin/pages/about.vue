@@ -1,8 +1,8 @@
 <template lang="pug">
-    .about-page-container
+    .about-page-container.page
         .page-container
             .about-page__title
-                h2.page-title Блок &laquo;Обо мне&raquo;
+                h2.page-title.title-about Блок &laquo;Обо мне&raquo;
                 button.about-page__add() Добавить группу  
             .about-page__content               
                 form(@submit.prevent="createNewCategory").categories-form
@@ -61,7 +61,9 @@ export default {
 <style lang="postcss">
 @import '../default.pcss';
     
-
+    .title-about{
+        margin-bottom: 0;
+    }
     .page-title{
         font-size: 21px;
         font-family: "Open Sans";
@@ -240,6 +242,7 @@ export default {
         border: none;
         outline: none;
         cursor: pointer;  
+        background-color: transparent;
         
     }
   
@@ -252,7 +255,7 @@ export default {
         border: none;
         outline: none;
         cursor: pointer;  
-       
+        background-color: transparent;
     }
 
 

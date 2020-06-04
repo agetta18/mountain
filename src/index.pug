@@ -39,6 +39,12 @@ html(lang="en")
                                     each item in items
                                         li.menu__item
                                             a.menu__link #{item}
+                                - var icons = ['insta', 'vk', 'github'];
+                                ul.socials.socials--mini
+                                    each item in icons
+                                        li.socials__item
+                                            a(href="").socials__link
+                                                +icon(item, 'socials__icon')
                         .header__socials
                             - var icons = ['insta', 'vk', 'github'];
                             ul.socials
@@ -46,7 +52,7 @@ html(lang="en")
                                     li.socials__item
                                         a(href="").socials__link
                                             +icon(item, 'socials__icon')
-                        .menu__span
+                        a.menu__span
                             span
                             span
                             span

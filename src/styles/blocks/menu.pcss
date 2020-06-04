@@ -4,6 +4,7 @@
     @include tablets{
         display: none;
     }
+    
 
     &--footer{
         @include tablets{
@@ -24,6 +25,26 @@
     &:hover{
         opacity: 1;
         text-decoration: underline;
+    }
+
+}
+
+.menu--mini .menu__item{
+    @include tablets{
+        font-size: 18px;
+        font-family: "OpenSans", sans-serif;
+        color: rgb(65, 76, 99);
+        line-height: 2.667;
+        font-weight: bold; 
+    }
+}
+
+.menu--mini .menu__list{
+    @include tablets{    
+        display: block;
+        flex-direction: column;
+        margin-bottom: 56PX;
+        position: relative;
     }
 }
 
@@ -49,10 +70,72 @@
         display: block;     
     }
 
-     @include tablets{
+    @include tablets{
         display: inline-flex;
+    }
+
+    &--exit{
+
+        position: fixed;
+        right: 5%;
+        z-index: 201;
+        height: 25px;
+
+        @include phones{
+            top:3%;
+            right: 6%;
+        }
+
+        & span {
+            width: 100%;
+            height: 4px;
+            background-color: $text-color;
+            display: block;
+
+            &:first-child{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) rotate(45deg);
+            }  
+
+            &:nth-child(2){
+                display: none;
+            } 
+
+            &:last-child{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) rotate(-45deg);
+            }
+        }
     }
 
    
     
+}
+
+.menu{
+    &--mini{
+        @include tablets{
+            display: block;
+            position: fixed;
+            top:0;
+            left: 58%;
+            bottom: 0;
+            right: 0;
+            background-color:#fff;
+            z-index: 200;
+            height: 100vh;
+            padding: 29% 10%;
+       
+        }
+        @include phones{
+            left:0;
+            padding: 135PX 52PX;
+        }
+
+
+    }
 }

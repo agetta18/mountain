@@ -66,6 +66,7 @@ export default {
         display: flex;
         align-items: center;
         justify-content: center;
+       
         &:before {
             content: "";
             position: absolute;

@@ -82,7 +82,7 @@ export default {
       async deleteWork({ commit }, work) {
         try {
           if (work.id >= 0) {
-            const { data } = await this.$axios.delete(`/works/338`);
+            const { data } = await this.$axios.delete(`/works/${work.id}`);
           }
   
           commit("DELETE_WORK", work);

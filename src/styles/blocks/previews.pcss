@@ -47,10 +47,13 @@
 .slider__preview{
     position: absolute;
     right: 0;
-    bottom: -86px;
+    bottom: 0;
     height: 88%;
     overflow: hidden;
+    @include desktopHd{
+        bottom:-86px;
 
+    }
 
     @include desktop{
         bottom: -32px;

@@ -1,5 +1,5 @@
 <template lang="pug">
-    .page-add-work
+    .page-add-work.page
         .page-container
             h2.page-title Блок &laquo;Работы&raquo;
             works-form(v-if="editorVisible" :selectedWork="currentWork")

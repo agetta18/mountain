@@ -17,6 +17,7 @@
 </template>
 
 <script>
+import { mapState, mapActions, mapGetters } from "vuex";
 import headline from './components/headline';
 import tabs from './components/tabs';
 import user from './components/user';
@@ -65,10 +66,12 @@ export default {
         }
     }
 
-    .content-container {
+    .page {
         background-image: url('../images/admin/bg.png');
         padding-top: 60PX;
         padding-bottom: 140px;
+        background-size: 100%;
+      
         @include tablets{
             padding-top: 50PX;
         }

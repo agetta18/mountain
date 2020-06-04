@@ -1,12 +1,17 @@
 <template lang="pug">
     .tabs-component
         ul.list
-            li.item(v-for='tab in tabs')
+            li.item(v-for='tab in tabs') 
                 router-link(
-                    :data-text='tab.title'
-                    :to="tab.href" 
-                    exact-active-class="item--active"
-                ).tabs__link {{tab.title}}
+                    :data-text="tab.title" 
+                    :to='tab.href'
+                    exact-active-class="active"
+                ).tabs__link 
+            //- li.item Reviews
+            //-     router-link(  
+            //-         to="/reviews" 
+            //-         exact-active-class="item--active"
+            //-     ).tabs__link 
 </template>
 
 <script>
@@ -16,8 +21,8 @@ export default {
         return {
             tabs: [
                 { title: "Обо мне", href: "/" },
-                { title: "Работы", href: "/works" },
-                { title: "Отзывы", href: "/reviews" },
+                { title: "Работы", href: "works" },
+                { title: "Отзывы", href: "reviews" },
             ],
         };
     },
@@ -28,41 +33,57 @@ export default {
 
 
 <style lang="postcss">
+@import '../../default.pcss';
 
-    .tabs {
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        width: 100%;
-        background: #fff;
-        padding-left: 60px;
-    }
 
     .list {
         display: flex;
-        width: 100%;   
-    }
+        height: 77px;
+        align-items: center;
+      
 
+        @include phones {
+            height: 87px;
+            justify-content: center;
+        }
+    }
     .item {
-        display: flex;
-        padding: 30px;
-        cursor: pointer;
-
-        &--active {
-            border-bottom: 3px solid #383bcf;
+        height: 100%;
+        margin-right: 30px;
+         
+        @include phones {
+            margin-right: 3px;
         }
-
-        &--active .tabs__link {
-            font-weight: bold;
+        &:last-child {
+            margin-right: 0;
         }
     }
 
-    &__link {
-        color: #414c63;
-        font-family: "Open Sans";
-        font-weight: 400;
-        font-size: 16px;
+    .tabs__link {
+        vertical-align: middle;
+        white-space: nowrap;
+        display: flex;
+        height: 100%;
+        align-items: center;
+        cursor: pointer;
+        width: 125px;
+        justify-content: center;
+        border-bottom: 3px solid transparent;
         text-decoration: none;
-    } 
+
+        @include phones {
+            width: 100px;
+        }
+
+        &:before {
+            content: attr(data-text);
+        }
+        &:hover,
+        &.active {
+            color: #383bcf;
+            font-weight: 600;
+            border-color: currentColor;
+        }
+    }
 
 </style>

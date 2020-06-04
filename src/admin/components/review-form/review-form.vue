@@ -4,7 +4,7 @@
         hr
         .form__col
             .left__col
-                .reviews-editor__avatar.eror__wrapper(@drop.prevent='photoChanged' @dragover.prevent='')
+                .reviews-editor__avatar.eror__wrapper(@drop.prevent='photoChanged' )
                     .avatar__wrapper(v-if="renderedPhoto.length > 0")
                         img(v-if="renderedPhoto.length > 0" :src="renderedPhoto").file-drop__background-pi  
                     .avatar__wrapper(v-else)
@@ -36,6 +36,7 @@
     .avatar__wrapper{
         overflow: hidden;
     }
+
     .file-drop__background-pic {
         position: absolute;
         top: 0;
@@ -47,6 +48,7 @@
         width: 100%;
         display: flex;
     }
+
     .reviews-editor__avatar-btn {
         color: #383bcf;
         font-family: "Open Sans";
@@ -55,9 +57,11 @@
         line-height: 33.89px;
         margin-top: 20px;
     }
+
     .reviews-editor__input {
         display: none;
     }
+
     .reviews-editor__avatar {
         display: flex;
         width: 100%;
@@ -68,6 +72,7 @@
         padding-left: 10%;
         padding-right: 10%;
     }
+    
     .reviews-editor__avatar-wrapper {
         background-color: #dee4ed;
         display: flex;
@@ -87,9 +92,11 @@
         }
     }
     .form__row-up{
+        margin-bottom: 40px;
         @include tablets{
             display: flex;
             flex-direction:column;
+            margin-bottom: 0;
         }
     }
     .reviews-input{
@@ -148,7 +155,7 @@ export default {
         try {
             await this.closeReviewInEditor();
         } catch (error) {
-            // handling error
+           
         }
         },
         photoChanged() {
@@ -160,15 +167,15 @@ export default {
         this.renderImageFile(files[0]);
         },
         renderImageFile(file) {
-      const reader = new FileReader();
-      try {
-        reader.readAsDataURL(file);
-        reader.onloadend = () => {
-          this.renderedPhoto = reader.result;
+        const reader = new FileReader();
+        try {
+            reader.readAsDataURL(file);
+            reader.onloadend = () => {
+            this.renderedPhoto = reader.result;
         };
-      } catch (error) {
-        throw new Errow("Ошибка при чтении файла");
-      }
+        } catch (error) {
+            throw new Errow("Ошибка при чтении файла");
+        }
         }
     }
 }

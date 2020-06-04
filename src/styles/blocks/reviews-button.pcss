@@ -18,10 +18,24 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    
 
     @include phones {
         width: 56px;
         height: 56px;
+    }
+
+    &--prev{
+        right: 146%;
+        
+    }
+
+    &--next{
+        left: 100%;
+        @include tablets{
+            left: 85%;
+        }
+        
     }
 
     &__icon {

@@ -109,7 +109,7 @@ new Vue({
 
      async created() {
          const {data} = await request.get('/works/338');
-         console.log(data);
+       
          this.works = this.makeArrWithRequireImages(data);
         
     }

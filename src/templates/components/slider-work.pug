@@ -7,6 +7,7 @@ script(type='text/x-template')#slider-container
             :works = 'works'
             :currentIndex='currentIndex'
             @slide = 'handleSlide'
+            v-if='currentWork'
         )
         info(
             :currentWork = 'currentWork'

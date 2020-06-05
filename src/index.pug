@@ -27,31 +27,49 @@ html(lang="en")
                     img(src=require("images/parallax/mountain/6.png"), alt="mountain").parallax__pic
                 .parallax__layer(data-speed='0.3')
                     img(src=require("images/parallax/mountain/7.png"), alt="cloud").parallax__pic
-            section.hero
+            section(id='hero').hero
                 .container.container__hero
                     header.header
                         .header__logo
                             h2.logo КА
                         .header__menu
                             nav.menu
-                                - var items = ['Главная','Обо мне','Навыки','Работы','Отзывы','Связаться'];
+                                -
+                                    var items = [
+                                        ['Главная', '#hero'],
+                                        ['Обо мне', '#about'],
+                                        ['Навыки', '#value'],
+                                        ['Работы', '#works'],
+                                        ['Отзывы', '#reviews'],
+                                        ['Связаться', '#contacts'],
+                                    ]
                                 ul.menu__list
                                     each item in items
                                         li.menu__item
-                                            a.menu__link #{item}
-                                - var icons = ['insta', 'vk', 'github'];
+                                            a(href=`${item[1]}`).menu__link #{item[0]}
+                                -
+                                    var icons = [
+                                        ['insta', 'https://vk.com/agetta18'],
+                                        ['vk', 'https://www.instagram.com/stacey_reynolds/'],
+                                        ['github', 'https://github.com/agetta18']
+                                    ]
                                 ul.socials.socials--mini
                                     each item in icons
                                         li.socials__item
-                                            a(href="").socials__link
-                                                +icon(item, 'socials__icon')
+                                            a(href=`${item[1]}`).socials__link
+                                                +icon(`${item[0]}`, 'socials__icon')
                         .header__socials
-                            - var icons = ['insta', 'vk', 'github'];
+                            -
+                                var icons = [
+                                    ['insta', 'https://vk.com/agetta18'],
+                                    ['vk', 'https://www.instagram.com/stacey_reynolds/'],
+                                    ['github', 'https://github.com/agetta18']
+                                ]
                             ul.socials
                                 each item in icons
                                     li.socials__item
-                                        a(href="").socials__link
-                                            +icon(item, 'socials__icon')
+                                        a(href=`${item[1]}`).socials__link
+                                            +icon(`${item[0]}`, 'socials__icon')
                         a.menu__span
                             span
                             span
@@ -62,7 +80,7 @@ html(lang="en")
                             h2.user-data__name Кошкина <br> Анастасия
                     a(href="#").hero__bottom-btn.scroll-down__btn Скролл
                 
-            section.about-section
+            section(id='about').about-section
                 .container
                     .about
                         .about__user-data
@@ -94,7 +112,7 @@ html(lang="en")
                            
 
         .middle-section
-            section.values-section
+            section(id='value').values-section
                 .triangles.values-section__triangles
                     svg(viewBox='0 0 1000 100' preserveAspectRatio='none').triangles__item.triangle
                         polygon(points='0,0 0,100 1000,100')
@@ -113,7 +131,7 @@ html(lang="en")
                             .value-section__skill
                                 #skills-component
                                
-            section.work
+            section(id='works').work
                 .container.work__container
                     h2.section__title.section__title--work Мои работы
                     .work__components
@@ -137,7 +155,7 @@ html(lang="en")
                     img(src=require("images/parallax/budda/5.png"), alt="cloud").parallax__pic-budda
                 .parallax__layer-budda(data-speed='4')
                     img(src=require("images/parallax/budda/6.png"), alt="cloud").parallax__pic-budda
-            section.reviews
+            section(id='reviews').reviews
                 .container
                     .reviews__title
                         h2.section__title Что обо мне говорят
@@ -145,7 +163,7 @@ html(lang="en")
                         #reviewsSlider
                                                 
 
-            section.contacts
+            section(id='contacts').contacts
                 .container
                     h2.section__title.section__title--contacts Связаться со мной
                     .contacts__form
@@ -185,7 +203,7 @@ html(lang="en")
                         ul.menu__list.menu__list--footer
                             each item in items
                                 li.menu__item
-                                    a.menu__link #{item}    
+                                    a(href=`${item[1]}`).menu__link #{item[0]}    
                     .footer__data-content
                         .footer__data-col.footer__data-col--first
                             .footer__data-text
@@ -194,8 +212,8 @@ html(lang="en")
                                 ul.socials.socials--modific
                                     each item in icons
                                         li.socials__item.socials__item--modific
-                                            a(href="").socials__link
-                                                +icon(item, 'socials__icon socials__icon--modific').socials__icon--modific
+                                            a(href=`${item[1]}`).socials__link
+                                                +icon(`${item[0]}`, 'socials__icon socials__icon--modific').socials__icon--modific
                         .footer__data-col
                             .footer__data-quote
                                 .quote__text
